@@ -1,451 +1,460 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-  <title>Cristofani Telhas · Presell</title>
-  <!-- Font & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-    }
-    body {
-      background: #f4f7fc;
-      color: #1e2b3c;
-      line-height: 1.5;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    /* HEADER */
-    .header {
-      background: linear-gradient(145deg, #0b2a3e, #123b54);
-      color: white;
-      padding: 28px 0 18px;
-      border-bottom: 4px solid #e3b23c;
-    }
-    .header-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    .brand .tagline {
-      font-size: 1rem;
-      background: rgba(255,215,0,0.15);
-      display: inline-block;
-      padding: 4px 16px;
-      border-radius: 30px;
-      margin-top: 6px;
-      font-weight: 400;
-      color: #f5d97e;
-      border: 1px solid #e3b23c55;
-    }
-    .header-contact {
-      text-align: right;
-      font-size: 0.95rem;
-    }
-    .header-contact i {
-      color: #e3b23c;
-      width: 24px;
-    }
-    .header-contact a {
-      color: white;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .header-contact a:hover {
-      color: #f5d97e;
-      text-decoration: underline;
-    }
-    .header-contact .whatsapp {
-      background: #25d36620;
-      padding: 4px 12px;
-      border-radius: 30px;
-      border: 1px solid #25d36660;
-    }
-    /* HERO / PRESELL */
-    .hero {
-      background: white;
-      margin: 30px 0 25px;
-      border-radius: 28px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-      overflow: hidden;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .hero-image {
-      flex: 1 1 45%;
-      min-height: 260px;
-      background: #d9e2ed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    }
-    .hero-text {
-      flex: 1 1 55%;
-      padding: 40px 35px;
-    }
-    .hero-text .badge {
-      background: #e3b23c;
-      color: #0b2a3e;
-      font-weight: 700;
-      padding: 4px 18px;
-      border-radius: 30px;
-      display: inline-block;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      margin-bottom: 14px;
-    }
-    .hero-text h2 {
-      font-size: 2.3rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 18px;
-      color: #0b2a3e;
-    }
-    .hero-text h2 span {
-      color: #b8860b;
-    }
-    .hero-text p {
-      font-size: 1.1rem;
-      color: #2c4055;
-      margin-bottom: 20px;
-    }
-    .hero-text .cta {
-      display: inline-block;
-      background: #0b2a3e;
-      color: white;
-      padding: 14px 42px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      box-shadow: 0 6px 14px rgba(11,42,62,0.25);
-      transition: 0.2s;
-      border: 1px solid #e3b23c;
-    }
-    .hero-text .cta i {
-      margin-right: 10px;
-    }
-    .hero-text .cta:hover {
-      background: #1b4a64;
-      transform: scale(1.02);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-    }
-    /* INFO CARDS */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      margin: 35px 0 30px;
-    }
-    .card {
-      background: white;
-      padding: 24px 20px;
-      border-radius: 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
-      border: 1px solid #e5ecf3;
-      transition: 0.2s;
-    }
-    .card:hover {
-      border-color: #c0d0e0;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
-    }
-    .card i {
-      font-size: 2rem;
-      color: #e3b23c;
-      margin-bottom: 10px;
-    }
-    .card h4 {
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-      color: #0b2a3e;
-    }
-    .card p, .card a {
-      color: #2e4a62;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-    .card a:hover {
-      color: #b8860b;
-      text-decoration: underline;
-    }
-    .card .cnpj {
-      font-weight: 600;
-      color: #1e3b4f;
-      background: #f0f5fa;
-      padding: 2px 12px;
-      border-radius: 30px;
-      display: inline-block;
-      margin-top: 6px;
-    }
-    /* localização */
-    .location-card {
-      background: #eef4fa;
-      border-left: 5px solid #e3b23c;
-    }
-    .location-card i {
-      color: #1e5a7a;
-    }
-    .map-link {
-      margin-top: 10px;
-      display: inline-block;
-      background: #1e3b4f;
-      color: white;
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      text-decoration: none;
-    }
-    .map-link i {
-      color: white;
-      font-size: 0.9rem;
-      margin-right: 6px;
-    }
-    /* PRIVACY & COOKIE */
-    .privacy-section {
-      background: white;
-      border-radius: 28px;
-      padding: 28px 30px;
-      margin: 30px 0 25px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.02);
-      border: 1px solid #e2ecf5;
-    }
-    .privacy-flex {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .privacy-links a {
-      color: #1e4b66;
-      text-decoration: none;
-      font-weight: 500;
-      margin-right: 28px;
-      border-bottom: 2px solid transparent;
-      transition: 0.2s;
-    }
-    .privacy-links a:hover {
-      border-bottom-color: #e3b23c;
-      color: #0b2a3e;
-    }
-    .cookie-btn {
-      background: #f0f5fa;
-      border: none;
-      padding: 10px 22px;
-      border-radius: 60px;
-      font-weight: 600;
-      color: #1e3b4f;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid #cbdae7;
-      transition: 0.2s;
-      font-size: 0.95rem;
-    }
-    .cookie-btn i {
-      color: #e3b23c;
-    }
-    .cookie-btn:hover {
-      background: #e3b23c20;
-      border-color: #e3b23c;
-    }
-    /* footer */
-    .footer {
-      border-top: 1px solid #dce6ef;
-      padding: 28px 0 20px;
-      font-size: 0.9rem;
-      color: #3f5b70;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-    .footer a {
-      color: #1e4b66;
-      text-decoration: none;
-      margin: 0 6px;
-    }
-    .footer a:hover {
-      text-decoration: underline;
-    }
-    /* imagens ilustrativas */
-    .img-illustration {
-      background: #cbdae7;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      color: #1e3b4f;
-    }
-    .img-illustration i {
-      font-size: 4rem;
-      color: #2a5a7a;
-    }
-    .img-illustration img {
-      max-height: 140px;
-      width: auto;
-      border-radius: 12px;
-    }
-    @media (max-width: 700px) {
-      .hero-text h2 { font-size: 1.8rem; }
-      .brand h1 { font-size: 1.5rem; }
-      .header-content { flex-direction: column; align-items: start; gap: 10px; }
-      .header-contact { text-align: left; width: 100%; }
-      .privacy-flex { flex-direction: column; align-items: start; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Camisa 10 - Atacado de Confecções e Camisas</title>
+    <meta name="description" content="Loja Camisa 10: Comércio atacadista de confecções e camisas. Qualidade e preço de fábrica para o seu negócio. CNPJ: 48.851.488/0001-97">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #0d1b2a; /* Azul escuro elegante */
+            --accent-color: #fca311; /* Laranja/Dourado vibrante */
+            --text-color: #333;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+            --gray: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)), url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(252, 163, 17, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #e0910f;
+            transform: translateY(-3px);
+        }
+
+        /* Seção de Destaques (Vantagens) */
+        .features {
+            padding: 60px 20px;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Seção de Imagens Ilustrativas */
+        .showcase {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .showcase h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-card .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: var(--white);
+        }
+
+        /* Seção de Informações Legais / Sobre */
+        .info-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 20px;
+            font-size: 0.9rem;
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .info-box h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .info-box p, .info-box li {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a131f;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            margin: 0 10px;
+        }
+
+        /* Cookie Banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+            display: none; /* Controlado via JS */
+        }
+
+        #cookie-banner p {
+            margin: 0;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        #cookie-banner a {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .cookie-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 25px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cookie-btn:hover {
+            background-color: #e0910f;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .logo {
+                font-size: 1.8rem;
+            }
+            .info-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-content">
-      <div class="brand">
-        <h1><i class="fas fa-industry" style="color:#e3b23c; margin-right: 8px;"></i>Cristofani Telhas LTDA</h1>
-        <div class="tagline"><i class="fas fa-warehouse"></i>  Atacado siderúrgico & metalúrgico</div>
-      </div>
-      <div class="header-contact">
-        <div><i class="fas fa-phone-alt"></i> <a href="tel:+552133955902">(21) 3395-5902</a>  ·  <span class="whatsapp"><i class="fab fa-whatsapp"></i> <a href="tel:+5516993450103">(16) 99345-0103</a></span></div>
-        <div style="margin-top: 4px;"><i class="fas fa-envelope"></i> <a href="mailto:oncase.rio@hotmail.com">oncase.rio@hotmail.com</a>  ·  <a href="mailto:cristofanitelhas@gmail.com">cristofanitelhas@gmail.com</a></div>
-      </div>
-    </div>
-  </header>
 
-  <main class="container">
-    <!-- HERO / PRESELL -->
-    <section class="hero">
-      <div class="hero-image">
-        <!-- imagem ilustrativa siderúrgica -->
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23b0c7db'/%3E%3Ctext x='20' y='120' font-size='28' fill='%231e3b4f' font-family='Segoe UI'%3E⚙️ Aço &amp; Metal%3C/text%3E%3Ctext x='30' y='160' font-size='22' fill='%232a5a7a'%3E🏗️ Telhas / Perfis%3C/text%3E%3C/svg%3E"
-               alt="Ilustração siderúrgica" style="max-width:100%; border-radius: 16px;">
-          <span style="font-size:0.8rem; background:#eef4fa; padding:2px 14px; border-radius:30px;">Cristofani Telhas · qualidade</span>
+    <!-- Header / Hero -->
+    <header>
+        <div class="logo">Loja Camisa <span>10</span></div>
+        <div class="hero-content">
+            <h1>Comércio Atacadista de Confecções e Camisas</h1>
+            <p>Qualidade incomparável e preços de fábrica para revendedores e lojistas. Aumente seu lucro com a Loja Camisa 10.</p>
+            <a href="https://wa.me/5511962858451?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20atacado%20de%20camisas" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> Falar com Vendedor
+            </a>
         </div>
-      </div>
-      <div class="hero-text">
-        <div class="badge"><i class="fas fa-bolt"></i> PRESELL · ATACADO</div>
-        <h2>Fornecimento <span>siderúrgico</span> com <br>excelência e agilidade</h2>
-        <p><i class="fas fa-check-circle" style="color:#e3b23c;"></i>  Telhas, perfis, chapas e estruturas metálicas. <br> 
-        <i class="fas fa-truck" style="color:#e3b23c;"></i>  Entregas para todo o Brasil. Atendimento especializado.</p>
-        <a href="#" class="cta"><i class="fas fa-arrow-right"></i> Solicitar cotação</a>
-        <div style="margin-top: 15px; font-size:0.9rem; color:#2e5a7a;"><i class="fas fa-shield-alt"></i>  CNPJ: 64.900.937/0001-04 · Micro empresa</div>
-      </div>
+    </header>
+
+    <!-- Vantagens -->
+    <section class="features">
+        <h2>Por que comprar na Loja Camisa 10?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-tags"></i>
+                <h3>Preço de Atacado</h3>
+                <p>Condições especiais para compras em grande volume. Maximize seus lucros com nossos preços competitivos.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-tshirt"></i>
+                <h3>Variedade de Modelos</h3>
+                <p>Camisas sociais, casuais, esportivas e muito mais. Atualizamos nosso catálogo constantemente.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Envio Rápido</h3>
+                <p>Logística eficiente para todo o Brasil. Receba sua mercadoria com agilidade e segurança.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- INFO GRID: dados + contato + localização -->
-    <div class="info-grid">
-      <div class="card">
-        <i class="fas fa-building"></i>
-        <h4>Dados cadastrais</h4>
-        <p><strong>Razão Social:</strong> Cristofani Telhas LTDA</p>
-        <p><span class="cnpj"><i class="far fa-credit-card"></i> CNPJ: 64.900.937/0001-04</span></p>
-        <p><i class="far fa-calendar-alt"></i> Abertura: 03/02/2026 · 7 meses</p>
-        <p><i class="fas fa-tag"></i> Porte: Micro Empresa</p>
-        <p><i class="fas fa-gavel"></i> Natureza: Sociedade Empresária Limitada</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-headset"></i>
-        <h4>Contato & e-mail</h4>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:oncase.rio@hotmail.com">oncase.rio@hotmail.com</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:cristofanitelhas@gmail.com">cristofanitelhas@gmail.com</a></p>
-        <p><i class="fas fa-phone"></i> <a href="tel:+552133955902">(21) 3395-5902</a></p>
-        <p><i class="fab fa-whatsapp" style="color:#25d366;"></i> <a href="tel:+5516993450103">(16) 99345-0103</a> (Whatsapp)</p>
-        <p style="margin-top: 6px;"><i class="fas fa-clock"></i> Atendimento comercial: seg–sex, 8h–18h</p>
-      </div>
-      <div class="card location-card">
-        <i class="fas fa-map-pin"></i>
-        <h4>Matriz · Ribeirão Preto</h4>
-        <p><i class="fas fa-road"></i> Rua Holanda, 1272 · Vila Mariana</p>
-        <p><i class="fas fa-city"></i> Ribeirão Preto/SP · CEP 14075-240</p>
-        <p><i class="fas fa-envelope"></i> Para correspondência: Cristofani Telhas LTDA, Rua Holanda 1272, Vila Mariana, Ribeirão Preto SP, 14075-240</p>
-        <a href="#" class="map-link" target="_blank"><i class="fas fa-map-marked-alt"></i> Ver no Google Maps</a>
-        <div style="margin-top: 8px; font-size:0.85rem; background:#dce6ef; padding:4px 12px; border-radius:40px; display:inline-block;"><i class="fas fa-flag"></i>  Filial: Av. das Américas 15500, Q.12 - Recreio, RJ</div>
-      </div>
-    </div>
-
-    <!-- PRIVACY + COOKIE SECTION (link separado + política) -->
-    <div class="privacy-section" id="privacidade">
-      <div class="privacy-flex">
-        <div class="privacy-links">
-          <a href="#privacidade" onclick="event.preventDefault(); alert('Política de privacidade: seus dados são protegidos conforme LGPD. Não compartilhamos informações pessoais sem consentimento.');"><i class="fas fa-lock"></i> Política de Privacidade</a>
-          <a href="#cookies" onclick="event.preventDefault(); alert('Usamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo. Ao continuar, você concorda com nossa política de cookies.');"><i class="fas fa-cookie-bite"></i> Política de Cookies</a>
+    <!-- Imagens Ilustrativas (Showcase) -->
+    <section class="showcase">
+        <h2>Nossa Qualidade em Detalhes</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Camisas Sociais Atacado">
+                <div class="overlay">
+                    <h3>Camisas Sociais</h3>
+                    <p>Elegância e sofisticação para o seu cliente.</p>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Camisas Casuais Atacado">
+                <div class="overlay">
+                    <h3>Camisas Casuais</h3>
+                    <p>Estilo e conforto para o dia a dia.</p>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Estoque de Confecções">
+                <div class="overlay">
+                    <h3>Grande Estoque</h3>
+                    <p>Pronto para atender pedidos de todos os tamanhos.</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <button class="cookie-btn" id="cookieConsentBtn"><i class="fas fa-cookie"></i> Consentimento de Cookies</button>
-        </div>
-      </div>
-      <!-- mensagem adicional -->
-      <div style="margin-top: 14px; background:#f0f7fe; padding: 10px 18px; border-radius: 60px; font-size:0.9rem; border:1px solid #d0e0ee;">
-        <i class="fas fa-info-circle" style="color:#1e5a7a;"></i>  Ao navegar, você concorda com o uso de cookies para melhorar sua experiência. 
-        <button class="cookie-btn" style="margin-left:12px; padding:4px 16px; background:#dce6ef;" id="cookieAcceptBtn">Aceitar</button>
-      </div>
-    </div>
+    </section>
 
-    <!-- rodapé com link de privacidade separado (já incluso acima) + informações adicionais -->
-    <footer class="footer">
-      <div>
-        <i class="fas fa-copyright"></i> 2026 Cristofani Telhas LTDA · Comércio atacadista de produtos siderúrgicos e metalúrgicos
-      </div>
-      <div>
-        <a href="#privacidade" onclick="event.preventDefault(); alert('Política de Privacidade – Cristofani Telhas: respeitamos sua privacidade. Coletamos dados apenas para contato e atendimento, conforme LGPD.');"><i class="fas fa-user-shield"></i> Privacidade</a>
-        <a href="#cookies" onclick="event.preventDefault(); alert('Cookies: utilizamos cookies essenciais e de desempenho. Você pode gerenciar suas preferências a qualquer momento.');"><i class="fas fa-cookie"></i> Cookies</a>
-        <span style="margin-left: 10px;"><i class="fas fa-envelope"></i> cristofanitelhas@gmail.com</span>
-      </div>
+    <!-- Informações de Registro e Contato -->
+    <section class="info-section">
+        <div class="info-container">
+            <div class="info-box">
+                <h3><i class="fas fa-building"></i> Dados da Empresa</h3>
+                <ul>
+                    <li><strong>Razão Social:</strong> Loja Camisa 10 Comercio LTDA</li>
+                    <li><strong>Nome Fantasia:</strong> Loja Camisa 10</li>
+                    <li><strong>CNPJ:</strong> 48.851.488/0001-97</li>
+                    <li><strong>Inscrição Estadual (SP):</strong> 138.307.692.116</li>
+                    <li><strong>Abertura:</strong> 09/12/2022</li>
+                </ul>
+            </div>
+            
+            <div class="info-box">
+                <h3><i class="fas fa-map-marker-alt"></i> Localização</h3>
+                <p>
+                    Rua Adoniro Augusto de Paula, 68<br>
+                    Complemento: Conj A<br>
+                    Bairro: Jardim Machado<br>
+                    São Paulo - SP<br>
+                    CEP: 03909-110
+                </p>
+                <p style="margin-top: 15px;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Adoniro+Augusto+de+Paula+68+Jardim+Machado+São+Paulo+SP" target="_blank" style="color: var(--accent-color); font-weight: bold;">
+                        <i class="fas fa-map-marked-alt"></i> Ver no Google Maps
+                    </a>
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3><i class="fas fa-envelope"></i> Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> lojacamisa10.2023@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> (11) 96285-8451</li>
+                    <li><i class="fab fa-whatsapp"></i> (11) 96285-8451</li>
+                </ul>
+                <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">
+                    Para correspondência: Loja Camisa 10 Comercio LTDA<br>
+                    Rua Adoniro Augusto de Paula 68 Conj A, Jardim Machado, São Paulo SP, 03909-110
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Loja Camisa 10 Comercio LTDA. Todos os direitos reservados.</p>
+        <p>
+            <a href="politica-de-privacidade.html">Política de Privacidade</a> | 
+            <a href="politica-de-cookies.html">Política de Cookies</a>
+        </p>
     </footer>
-  </main>
 
-  <!-- script para cookies (botão interativo) -->
-  <script>
-    (function() {
-      // Botão de consentimento principal
-      const cookieBtn = document.getElementById('cookieConsentBtn');
-      if (cookieBtn) {
-        cookieBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          alert('🍪 Obrigado! Registramos sua preferência de cookies. Usamos cookies para melhorar sua experiência em nosso site.');
-          // poderia setar localStorage, mas mantemos apenas demonstrativo
-        });
-      }
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner">
+        <p>
+            Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com nossa 
+            <a href="politica-de-privacidade.html">Política de Privacidade</a> e 
+            <a href="politica-de-cookies.html">Política de Cookies</a>.
+        </p>
+        <button class="cookie-btn" onclick="acceptCookies()">Aceitar e Fechar</button>
+    </div>
 
-      // botão "Aceitar" inline
-      const acceptBtn = document.getElementById('cookieAcceptBtn');
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          alert('✅ Cookies aceitos! Sua experiência será otimizada.');
-        });
-      }
+    <script>
+        // Verifica se o usuário já aceitou os cookies
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                document.getElementById('cookie-banner').style.display = 'flex';
+            }
+        }
 
-      // links de política de privacidade (já com alert nos href)
-      console.log('Presell Cristofani Telhas - Google Ads ready');
-    })();
-  </script>
+        // Função para aceitar os cookies
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
 
-  <!-- pequeno extra: imagens ilustrativas adicionais (dentro do hero já temos uma, mas adicionamos mais uma sutileza no rodapé) -->
-  <div style="display:none;">imagens ilustrativas incorporadas via SVG no hero</div>
+        // Executa a verificação ao carregar a página
+        window.onload = checkCookieConsent;
+    </script>
+
 </body>
 </html>
