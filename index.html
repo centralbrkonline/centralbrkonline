@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Cristofani Telhas · Presell</title>
+  <!-- Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+    body {
+      background: #f4f7fc;
+      color: #1e2b3c;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* HEADER */
+    .header {
+      background: linear-gradient(145deg, #0b2a3e, #123b54);
+      color: white;
+      padding: 28px 0 18px;
+      border-bottom: 4px solid #e3b23c;
+    }
+    .header-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .brand .tagline {
+      font-size: 1rem;
+      background: rgba(255,215,0,0.15);
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 30px;
+      margin-top: 6px;
+      font-weight: 400;
+      color: #f5d97e;
+      border: 1px solid #e3b23c55;
+    }
+    .header-contact {
+      text-align: right;
+      font-size: 0.95rem;
+    }
+    .header-contact i {
+      color: #e3b23c;
+      width: 24px;
+    }
+    .header-contact a {
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .header-contact a:hover {
+      color: #f5d97e;
+      text-decoration: underline;
+    }
+    .header-contact .whatsapp {
+      background: #25d36620;
+      padding: 4px 12px;
+      border-radius: 30px;
+      border: 1px solid #25d36660;
+    }
+    /* HERO / PRESELL */
+    .hero {
+      background: white;
+      margin: 30px 0 25px;
+      border-radius: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .hero-image {
+      flex: 1 1 45%;
+      min-height: 260px;
+      background: #d9e2ed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
+    .hero-text {
+      flex: 1 1 55%;
+      padding: 40px 35px;
+    }
+    .hero-text .badge {
+      background: #e3b23c;
+      color: #0b2a3e;
+      font-weight: 700;
+      padding: 4px 18px;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .hero-text h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: #0b2a3e;
+    }
+    .hero-text h2 span {
+      color: #b8860b;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #2c4055;
+      margin-bottom: 20px;
+    }
+    .hero-text .cta {
+      display: inline-block;
+      background: #0b2a3e;
+      color: white;
+      padding: 14px 42px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 6px 14px rgba(11,42,62,0.25);
+      transition: 0.2s;
+      border: 1px solid #e3b23c;
+    }
+    .hero-text .cta i {
+      margin-right: 10px;
+    }
+    .hero-text .cta:hover {
+      background: #1b4a64;
+      transform: scale(1.02);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+    /* INFO CARDS */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin: 35px 0 30px;
+    }
+    .card {
+      background: white;
+      padding: 24px 20px;
+      border-radius: 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #e5ecf3;
+      transition: 0.2s;
+    }
+    .card:hover {
+      border-color: #c0d0e0;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+    }
+    .card i {
+      font-size: 2rem;
+      color: #e3b23c;
+      margin-bottom: 10px;
+    }
+    .card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #0b2a3e;
+    }
+    .card p, .card a {
+      color: #2e4a62;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .card a:hover {
+      color: #b8860b;
+      text-decoration: underline;
+    }
+    .card .cnpj {
+      font-weight: 600;
+      color: #1e3b4f;
+      background: #f0f5fa;
+      padding: 2px 12px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 6px;
+    }
+    /* localização */
+    .location-card {
+      background: #eef4fa;
+      border-left: 5px solid #e3b23c;
+    }
+    .location-card i {
+      color: #1e5a7a;
+    }
+    .map-link {
+      margin-top: 10px;
+      display: inline-block;
+      background: #1e3b4f;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    .map-link i {
+      color: white;
+      font-size: 0.9rem;
+      margin-right: 6px;
+    }
+    /* PRIVACY & COOKIE */
+    .privacy-section {
+      background: white;
+      border-radius: 28px;
+      padding: 28px 30px;
+      margin: 30px 0 25px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.02);
+      border: 1px solid #e2ecf5;
+    }
+    .privacy-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .privacy-links a {
+      color: #1e4b66;
+      text-decoration: none;
+      font-weight: 500;
+      margin-right: 28px;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .privacy-links a:hover {
+      border-bottom-color: #e3b23c;
+      color: #0b2a3e;
+    }
+    .cookie-btn {
+      background: #f0f5fa;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1e3b4f;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #cbdae7;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .cookie-btn i {
+      color: #e3b23c;
+    }
+    .cookie-btn:hover {
+      background: #e3b23c20;
+      border-color: #e3b23c;
+    }
+    /* footer */
+    .footer {
+      border-top: 1px solid #dce6ef;
+      padding: 28px 0 20px;
+      font-size: 0.9rem;
+      color: #3f5b70;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .footer a {
+      color: #1e4b66;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    /* imagens ilustrativas */
+    .img-illustration {
+      background: #cbdae7;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      color: #1e3b4f;
+    }
+    .img-illustration i {
+      font-size: 4rem;
+      color: #2a5a7a;
+    }
+    .img-illustration img {
+      max-height: 140px;
+      width: auto;
+      border-radius: 12px;
+    }
+    @media (max-width: 700px) {
+      .hero-text h2 { font-size: 1.8rem; }
+      .brand h1 { font-size: 1.5rem; }
+      .header-content { flex-direction: column; align-items: start; gap: 10px; }
+      .header-contact { text-align: left; width: 100%; }
+      .privacy-flex { flex-direction: column; align-items: start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="brand">
+        <h1><i class="fas fa-industry" style="color:#e3b23c; margin-right: 8px;"></i>Cristofani Telhas LTDA</h1>
+        <div class="tagline"><i class="fas fa-warehouse"></i>  Atacado siderúrgico & metalúrgico</div>
+      </div>
+      <div class="header-contact">
+        <div><i class="fas fa-phone-alt"></i> <a href="tel:+552133955902">(21) 3395-5902</a>  ·  <span class="whatsapp"><i class="fab fa-whatsapp"></i> <a href="tel:+5516993450103">(16) 99345-0103</a></span></div>
+        <div style="margin-top: 4px;"><i class="fas fa-envelope"></i> <a href="mailto:oncase.rio@hotmail.com">oncase.rio@hotmail.com</a>  ·  <a href="mailto:cristofanitelhas@gmail.com">cristofanitelhas@gmail.com</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO / PRESELL -->
+    <section class="hero">
+      <div class="hero-image">
+        <!-- imagem ilustrativa siderúrgica -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23b0c7db'/%3E%3Ctext x='20' y='120' font-size='28' fill='%231e3b4f' font-family='Segoe UI'%3E⚙️ Aço &amp; Metal%3C/text%3E%3Ctext x='30' y='160' font-size='22' fill='%232a5a7a'%3E🏗️ Telhas / Perfis%3C/text%3E%3C/svg%3E"
+               alt="Ilustração siderúrgica" style="max-width:100%; border-radius: 16px;">
+          <span style="font-size:0.8rem; background:#eef4fa; padding:2px 14px; border-radius:30px;">Cristofani Telhas · qualidade</span>
+        </div>
+      </div>
+      <div class="hero-text">
+        <div class="badge"><i class="fas fa-bolt"></i> PRESELL · ATACADO</div>
+        <h2>Fornecimento <span>siderúrgico</span> com <br>excelência e agilidade</h2>
+        <p><i class="fas fa-check-circle" style="color:#e3b23c;"></i>  Telhas, perfis, chapas e estruturas metálicas. <br> 
+        <i class="fas fa-truck" style="color:#e3b23c;"></i>  Entregas para todo o Brasil. Atendimento especializado.</p>
+        <a href="#" class="cta"><i class="fas fa-arrow-right"></i> Solicitar cotação</a>
+        <div style="margin-top: 15px; font-size:0.9rem; color:#2e5a7a;"><i class="fas fa-shield-alt"></i>  CNPJ: 64.900.937/0001-04 · Micro empresa</div>
+      </div>
+    </section>
+
+    <!-- INFO GRID: dados + contato + localização -->
+    <div class="info-grid">
+      <div class="card">
+        <i class="fas fa-building"></i>
+        <h4>Dados cadastrais</h4>
+        <p><strong>Razão Social:</strong> Cristofani Telhas LTDA</p>
+        <p><span class="cnpj"><i class="far fa-credit-card"></i> CNPJ: 64.900.937/0001-04</span></p>
+        <p><i class="far fa-calendar-alt"></i> Abertura: 03/02/2026 · 7 meses</p>
+        <p><i class="fas fa-tag"></i> Porte: Micro Empresa</p>
+        <p><i class="fas fa-gavel"></i> Natureza: Sociedade Empresária Limitada</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-headset"></i>
+        <h4>Contato & e-mail</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:oncase.rio@hotmail.com">oncase.rio@hotmail.com</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:cristofanitelhas@gmail.com">cristofanitelhas@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+552133955902">(21) 3395-5902</a></p>
+        <p><i class="fab fa-whatsapp" style="color:#25d366;"></i> <a href="tel:+5516993450103">(16) 99345-0103</a> (Whatsapp)</p>
+        <p style="margin-top: 6px;"><i class="fas fa-clock"></i> Atendimento comercial: seg–sex, 8h–18h</p>
+      </div>
+      <div class="card location-card">
+        <i class="fas fa-map-pin"></i>
+        <h4>Matriz · Ribeirão Preto</h4>
+        <p><i class="fas fa-road"></i> Rua Holanda, 1272 · Vila Mariana</p>
+        <p><i class="fas fa-city"></i> Ribeirão Preto/SP · CEP 14075-240</p>
+        <p><i class="fas fa-envelope"></i> Para correspondência: Cristofani Telhas LTDA, Rua Holanda 1272, Vila Mariana, Ribeirão Preto SP, 14075-240</p>
+        <a href="#" class="map-link" target="_blank"><i class="fas fa-map-marked-alt"></i> Ver no Google Maps</a>
+        <div style="margin-top: 8px; font-size:0.85rem; background:#dce6ef; padding:4px 12px; border-radius:40px; display:inline-block;"><i class="fas fa-flag"></i>  Filial: Av. das Américas 15500, Q.12 - Recreio, RJ</div>
+      </div>
+    </div>
+
+    <!-- PRIVACY + COOKIE SECTION (link separado + política) -->
+    <div class="privacy-section" id="privacidade">
+      <div class="privacy-flex">
+        <div class="privacy-links">
+          <a href="#privacidade" onclick="event.preventDefault(); alert('Política de privacidade: seus dados são protegidos conforme LGPD. Não compartilhamos informações pessoais sem consentimento.');"><i class="fas fa-lock"></i> Política de Privacidade</a>
+          <a href="#cookies" onclick="event.preventDefault(); alert('Usamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo. Ao continuar, você concorda com nossa política de cookies.');"><i class="fas fa-cookie-bite"></i> Política de Cookies</a>
+        </div>
+        <div>
+          <button class="cookie-btn" id="cookieConsentBtn"><i class="fas fa-cookie"></i> Consentimento de Cookies</button>
+        </div>
+      </div>
+      <!-- mensagem adicional -->
+      <div style="margin-top: 14px; background:#f0f7fe; padding: 10px 18px; border-radius: 60px; font-size:0.9rem; border:1px solid #d0e0ee;">
+        <i class="fas fa-info-circle" style="color:#1e5a7a;"></i>  Ao navegar, você concorda com o uso de cookies para melhorar sua experiência. 
+        <button class="cookie-btn" style="margin-left:12px; padding:4px 16px; background:#dce6ef;" id="cookieAcceptBtn">Aceitar</button>
+      </div>
+    </div>
+
+    <!-- rodapé com link de privacidade separado (já incluso acima) + informações adicionais -->
+    <footer class="footer">
+      <div>
+        <i class="fas fa-copyright"></i> 2026 Cristofani Telhas LTDA · Comércio atacadista de produtos siderúrgicos e metalúrgicos
+      </div>
+      <div>
+        <a href="#privacidade" onclick="event.preventDefault(); alert('Política de Privacidade – Cristofani Telhas: respeitamos sua privacidade. Coletamos dados apenas para contato e atendimento, conforme LGPD.');"><i class="fas fa-user-shield"></i> Privacidade</a>
+        <a href="#cookies" onclick="event.preventDefault(); alert('Cookies: utilizamos cookies essenciais e de desempenho. Você pode gerenciar suas preferências a qualquer momento.');"><i class="fas fa-cookie"></i> Cookies</a>
+        <span style="margin-left: 10px;"><i class="fas fa-envelope"></i> cristofanitelhas@gmail.com</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- script para cookies (botão interativo) -->
+  <script>
+    (function() {
+      // Botão de consentimento principal
+      const cookieBtn = document.getElementById('cookieConsentBtn');
+      if (cookieBtn) {
+        cookieBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('🍪 Obrigado! Registramos sua preferência de cookies. Usamos cookies para melhorar sua experiência em nosso site.');
+          // poderia setar localStorage, mas mantemos apenas demonstrativo
+        });
+      }
+
+      // botão "Aceitar" inline
+      const acceptBtn = document.getElementById('cookieAcceptBtn');
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('✅ Cookies aceitos! Sua experiência será otimizada.');
+        });
+      }
+
+      // links de política de privacidade (já com alert nos href)
+      console.log('Presell Cristofani Telhas - Google Ads ready');
+    })();
+  </script>
+
+  <!-- pequeno extra: imagens ilustrativas adicionais (dentro do hero já temos uma, mas adicionamos mais uma sutileza no rodapé) -->
+  <div style="display:none;">imagens ilustrativas incorporadas via SVG no hero</div>
+</body>
+</html>
